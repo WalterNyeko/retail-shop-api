@@ -28,7 +28,8 @@ public class JwtFilter extends OncePerRequestFilter {
     public static final String ANONYMOUS_REQUEST_PATHS = "" +
             "/v1/users/signin:POST" +
             "/v1/users/signup:POST" +
-            "/h2-console:GET";
+            "/h2-console:GET" +
+            "/v1/swagger-ui.html:GET";
 
 
     @Autowired
