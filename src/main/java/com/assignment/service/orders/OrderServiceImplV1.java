@@ -202,18 +202,18 @@ public class OrderServiceImplV1 implements IOrderService{
     }
 
     public static int getDurationInYears(Date first, Date last) {
-        Calendar a = getCalendar(first);
-        Calendar b = getCalendar(last);
-        int diff = b.get(Calendar.YEAR) - a.get(Calendar.YEAR);
-        if (a.get(Calendar.DAY_OF_YEAR) > b.get(Calendar.DAY_OF_YEAR)) {
-            diff--;
+        Calendar firstDate = getCalendar(first);
+        Calendar lastDate = getCalendar(last);
+        int difference = lastDate.get(Calendar.YEAR) - firstDate.get(Calendar.YEAR);
+        if (firstDate.get(Calendar.DAY_OF_YEAR) > lastDate.get(Calendar.DAY_OF_YEAR)) {
+            difference--;
         }
-        return diff;
+        return difference;
     }
 
     public static Calendar getCalendar(Date date) {
-        Calendar cal = Calendar.getInstance(Locale.US);
-        cal.setTime(date);
-        return cal;
+        Calendar calendar = Calendar.getInstance(Locale.US);
+        calendar.setTime(date);
+        return calendar;
     }
 }
